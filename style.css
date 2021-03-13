@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* site-colors */
+    --dark-blue: rgb(76, 78, 97);
+    --gray-blue: hsl(229, 6%, 66%);
+    --light-gray: hsl(0, 0%, 98%);
+    /* accent card colors */
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --blue: hsl(212, 86%, 64%);
+    --orange: hsl(34, 97%, 64%);
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-gray);
+}
+
+section{
+    margin: 50px 3vw 0 3vw;
+}
+
+h1,h2{
+    color: var(--dark-blue);
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+p{
+    color: var(--gray-blue);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.title{
+    text-align: center;
+}
+
+.title .light{
+    font-weight: 200;
+    display: block;
+}
+
+.title-desc{
+    display: block;
+    font-weight: 600;
+    max-width: 450px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.cards{
+    padding: 0 12%;
+    margin-top: 3rem;
+    display: grid;
+    grid-gap: 2rem;
+    gap: 2rem;
+}
+
+.card {
+    box-shadow: 0 20px 30px -15px rgba(76, 78, 97, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+@media only screen and (min-width: 825px) {
+    .cards {
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card1, 
+    .card3 {
+        grid-row: 2 / span 2;
+    }
+
+    .card2 {
+        grid-area: 1 / 2 / 3 / 3;
+    }
+
+    .card4 {
+        grid-area: 3 / 2 / 5 / 3;
+    }
+}
+
+@media only screen and (max-width: 825px) {
+    .cards {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card {
+        margin-top: 2rem;
+    }
+}
+
+.card-title {
+    color: var(--dark-blue);
+    font-size: 1.1rem;
+}
+
+.card-desc {
+    font-size: 0.8rem;
+    margin-top: 0.5rem
+}
+
+.card::before {
+    position: relative;
+    display: block;
+    content: "";
+    height: 4px;
+    width: 100%;
+}
+
+.card:nth-child(1)::before {
+    background-color: var(--cyan);
+}
+
+.card:nth-child(2)::before {
+    background-color: var(--red);
+}
+
+.card:nth-child(3)::before {
+    background-color: var(--blue);
+}
+
+.card:nth-child(4)::before {
+    background-color: var(--orange);
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.icon {
+    position: relative;
+    margin-top: 40px;
+    float: right;
+    padding-bottom: inherit;
+}
+
+footer{
+    margin-top: 20px;
+}
